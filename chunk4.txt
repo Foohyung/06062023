@@ -1,0 +1,21 @@
+        // --- 5. Music Player Logic ---
+        const music = document.getElementById('bg-music');
+        const playBtn = document.getElementById('play-btn');
+        const vinyl = document.getElementById('vinyl');
+        const visualizer = document.getElementById('visualizer');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                playBtn.innerText = '▶️';
+                vinyl.classList.remove('playing');
+                visualizer.classList.remove('active');
+            } else {
+                music.play();
+                playBtn.innerText = '⏸️';
+                vinyl.classList.add('playing');
+                visualizer.classList.add('active');
+            }
+            isPlaying = !isPlaying;
+        });
